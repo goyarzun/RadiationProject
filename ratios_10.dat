@@ -1,0 +1,12 @@
+#10000 kelvin
+#wavelength	relative_intensity	reference
+#balmer
+6563		2.87			1.
+4861		1.			1.
+4340		.466			1.	
+4102		.256			1.
+3970		.158			1.
+#paschen
+18750		.352			1.
+12820		.354			.466
+10940		.354			.256
