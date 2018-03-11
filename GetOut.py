@@ -275,26 +275,26 @@ def j_nu_fb(n, Z, nu, T, n_i, n_e):
 # In[16]:
 
 
-test2 = []
-test3 = []
-for nu in np.logspace(np.log10(3e13), np.log10(3e15), 400):
-    test2.append(nu * 1 / 2 / np.pi * emissivity_free_free(1, 1, 1, 10000, nu))
-    test3.append(nu * j_nu_fb(20, 1, nu, 10000, 1e4, 1e4))
+# test2 = []
+# test3 = []
+# for nu in np.logspace(np.log10(3e13), np.log10(3e15), 400):
+#     test2.append(nu * 1 / 2 / np.pi * emissivity_free_free(1, 1, 1, 10000, nu))
+#     test3.append(nu * j_nu_fb(20, 1, nu, 10000, 1e4, 1e4))
 
 
-# In[17]:
+# # In[17]:
 
 
-plt.loglog(3e14 / np.logspace(np.log10(3e13), np.log10(3e15), 400),
-           np.array(test2), alpha=.5)
-plt.loglog(3e14 / np.logspace(np.log10(3e13), np.log10(3e15), 400),
-           np.pi * np.array(test3), alpha=.5)
-plt.loglog(3e14 / np.logspace(np.log10(3e13), np.log10(3e15), 400),
-           np.array(test2) + np.pi * np.array(test3))
+# plt.loglog(3e14 / np.logspace(np.log10(3e13), np.log10(3e15), 400),
+#            np.array(test2), alpha=.5)
+# plt.loglog(3e14 / np.logspace(np.log10(3e13), np.log10(3e15), 400),
+#            np.pi * np.array(test3), alpha=.5)
+# plt.loglog(3e14 / np.logspace(np.log10(3e13), np.log10(3e15), 400),
+#            np.array(test2) + np.pi * np.array(test3))
 
-plt.ylim(1e-26, 1e-23)
-plt.ylabel(r'\nu \gamma_{\nu} (ergs \, cm^{-3}s^{-1})')
-plt.xlabel('Wavelength (micron)')
+# plt.ylim(1e-26, 1e-23)
+# plt.ylabel(r'\nu \gamma_{\nu} (ergs \, cm^{-3}s^{-1})')
+# plt.xlabel('Wavelength (micron)')
 
 
 # In[18]:
@@ -345,11 +345,11 @@ gamma_nu_arr=gamma_nu(nu_arr,0,0)
 # In[22]:
 
 
-plt.loglog(3E14/np.logspace(np.log10(1.23e14),np.log10(2.467e15),200), nu_arr*gamma_nu_arr)
-plt.ylabel(r'$\nu \gamma_{\nu} (erg cm^{-3}s^{-1})$')
-plt.ylim(1e-26,1e-23)
-plt.xlim(0.1,10)
-plt.xlabel('Wavelength (micron)')
+# plt.loglog(3E14/np.logspace(np.log10(1.23e14),np.log10(2.467e15),200), nu_arr*gamma_nu_arr)
+# plt.ylabel(r'$\nu \gamma_{\nu} (erg cm^{-3}s^{-1})$')
+# plt.ylim(1e-26,1e-23)
+# plt.xlim(0.1,10)
+# plt.xlabel('Wavelength (micron)')
 
 
 # In[23]:
@@ -371,12 +371,12 @@ def nebular_continuum_emission(n, Z, nu, T, n_i, n_e, f_esc, N_LyC):
 # In[30]:
 
 
-plt.loglog(3e14 / np.logspace(np.log10(3e13), np.log10(3e15), 400),
-           np.array(test2) + np.pi * np.array(test3), 'k')
-plt.loglog(3E14/np.logspace(np.log10(1.23e14),np.log10(2.467e15),200), nu_arr*gamma_nu_arr, 'k',alpha=.3)
-plt.ylim(1e-26, 1e-23)
-plt.ylabel(r'\nu \gamma_{\nu} (ergs \, cm^{-3}s^{-1})')
-plt.xlabel('Wavelength (micron)')
+# plt.loglog(3e14 / np.logspace(np.log10(3e13), np.log10(3e15), 400),
+#            np.array(test2) + np.pi * np.array(test3), 'k')
+# plt.loglog(3E14/np.logspace(np.log10(1.23e14),np.log10(2.467e15),200), nu_arr*gamma_nu_arr, 'k',alpha=.3)
+# plt.ylim(1e-26, 1e-23)
+# plt.ylabel(r'\nu \gamma_{\nu} (ergs \, cm^{-3}s^{-1})')
+# plt.xlabel('Wavelength (micron)')
 
 
 # In[106]:
@@ -420,21 +420,21 @@ def get_spectrum(n, Z, T, n_i, n_e, f_esc, N_LyC, waves):
 # In[146]:
 
 
-waves, specs = get_spectrum(20, 1, 10000, 1e4, 1e2, 0, 1e52, np.linspace(.2, 2.4, 1000))
+# waves, specs = get_spectrum(20, 1, 10000, 1e4, 1e2, 0, 1e52, np.linspace(.2, 2.4, 1000))
 
 
-# In[147]:
+# # In[147]:
 
 
-plt.plot(waves, specs)
-plt.ylabel(r'L_{\nu}\, [erg\,s^{-1} \,Hz^{-1}]')
-plt.xlabel('Wavelength (microns)')
+# plt.plot(waves, specs)
+# plt.ylabel(r'L_{\nu}\, [erg\,s^{-1} \,Hz^{-1}]')
+# plt.xlabel('Wavelength (microns)')
 
 
-# In[149]:
+# # In[149]:
 
 
-np.savetxt('plot.txt', np.array([waves, specs]).T)
+# np.savetxt('plot.txt', np.array([waves, specs]).T)
 
 
 # In[ ]:
