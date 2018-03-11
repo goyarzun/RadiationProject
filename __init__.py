@@ -1,0 +1,1 @@
+from GetOut import get_spectrum
