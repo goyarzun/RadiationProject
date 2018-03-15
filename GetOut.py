@@ -330,10 +330,12 @@ def gamma_nu(nu_arr, n_p, n_e):
             g_nu=gnu_interp(nu)
             gammas.append((alpha_eff)*g_nu/denom)
         elif nu > nu_12/2:
-            g_nu2=(nu/(nu_12-nu))*gnu_interp(nu_12-nu)
-            gammas.append((alpha_eff)*g_nu2/denom)
-        elif nu_12-nu < (10**14*1E-26):
-            gammas.append(0)
+            if nu_12-nu < (10**14*1E-26):
+                gammas.append(0)
+            elif:
+                g_nu2=(nu/(nu_12-nu))*gnu_interp(nu_12-nu)
+                gammas.append((alpha_eff)*g_nu2/denom)
+            
     return gammas
 
 
