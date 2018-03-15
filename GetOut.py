@@ -325,13 +325,15 @@ nu_12=2*1.234E15
 def gamma_nu(nu_arr, n_p, n_e):
     gammas=[]
     denom=1+((n_p*q_p+n_e*q_p)/A_2)
-    for nu in nu_arr:
+    for nu in nu_arr: 
         if nu <= nu_12/2:
             g_nu=gnu_interp(nu)
             gammas.append((alpha_eff)*g_nu/denom)
         elif nu > nu_12/2:
             g_nu2=(nu/(nu_12-nu))*gnu_interp(nu_12-nu)
             gammas.append((alpha_eff)*g_nu2/denom)
+        elif nu_12-nu < (10**14*1E-26):
+            gammas.append(0)
     return gammas
 
 
